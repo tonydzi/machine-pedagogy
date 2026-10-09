@@ -12,8 +12,8 @@ versions in the open, and reports negative results as results.
 
 ## T2: recovery on a state signal vs on a schedule
 
-Folder: [`t2-threshold-replay/`](t2-threshold-replay/). Preprint v2 (October 2026): see the
-release notes and the Zenodo record linked in [CITATION.cff](CITATION.cff) once it is live.
+Folder: [`t2-threshold-replay/`](t2-threshold-replay/). Preprint v2 (October 2026):
+[doi:10.5281/zenodo.23268660](https://doi.org/10.5281/zenodo.23268660).
 
 Question: at a fixed gradient-step budget in continual learning, does replay triggered by a
 loss rise on a held-out probe of past tasks beat replay placed by a schedule?
