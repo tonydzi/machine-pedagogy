@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use machine-pedagogy in research or software, please cite it as below."
+title: "machine-pedagogy"
+type: software
+authors:
+  - family-names: Dziatkovskii
+    given-names: Anton
+    orcid: "https://orcid.org/0000-0001-7408-3054"
+    affiliation: "Palo Alto AI Research Lab"
+repository-code: "https://github.com/tonydzi/machine-pedagogy"
+url: "https://github.com/tonydzi/machine-pedagogy"
+abstract: >-
+  Experiments that carry health-preserving pedagogy over to how neural networks are trained: recovery on a state signal vs on a schedule, and the cost of learning.
