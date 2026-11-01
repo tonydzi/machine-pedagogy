@@ -1,0 +1,43 @@
+{
+  "schema": "t5-run-manifest/v1",
+  "phase": "pilot-dev",
+  "revision": "native-retention-v2",
+  "python": "python",
+  "t5": "t5.py",
+  "code_sha256": "396313ebc2ba747f608e08697d78a324dc9c39baefeecbf8f8ca69562a1eb0a2",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "arms": [
+    "fixed",
+    "permuted",
+    "variable"
+  ],
+  "config": {
+    "steps_a": 200,
+    "steps_b": 200,
+    "steps_c": 150,
+    "threads": 1,
+    "batch": 64,
+    "width": 80,
+    "layers": 2,
+    "heads": 4,
+    "lr": 0.001,
+    "checkpoint": 25,
+    "train_n": 512,
+    "dev_n": 128,
+    "test_n": 256,
+    "comp_n": 128
+  },
+  "output_dir": "runs/pilot-dev/native-retention-v2",
+  "runtime_dir": "<local>/t5-form-cost",
+  "driver_task": "T5-form-cost-pilot-dev-driver",
+  "watch_task": "T5-form-cost-pilot-dev-watch",
+  "cpu_sample_interval_seconds": 5,
+  "run_timeout_seconds": 1800,
+  "pilot_prior_elapsed_seconds": 294.7970000002533,
+  "Machine": "producer-node",
+  "Agent": "Codex"
+}

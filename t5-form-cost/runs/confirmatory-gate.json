@@ -1,0 +1,51 @@
+{
+  "schema": "t5-confirmatory-gate/v1",
+  "status": "ACCEPT",
+  "code_sha256": "396313ebc2ba747f608e08697d78a324dc9c39baefeecbf8f8ca69562a1eb0a2",
+  "manifest_sha256": "4567ea4c07cae7e7f7cf1279c189eff94e02936aa77f28c8789ca48615871bab",
+  "preregistration": {
+    "path": "PREREGISTRATION-v2.md",
+    "sha256": "b4886c558bfc0cee5a870ad59a8916831cbc7f6a4a06b61b071b16132cb06e72"
+  },
+  "reviews": [
+    {
+      "reviewer": "Codex",
+      "verdict": "ACCEPT",
+      "code_sha256": "396313ebc2ba747f608e08697d78a324dc9c39baefeecbf8f8ca69562a1eb0a2",
+      "prereg_sha256": "b4886c558bfc0cee5a870ad59a8916831cbc7f6a4a06b61b071b16132cb06e72",
+      "evidence_path": "reviews/freeze-v2-codex.md",
+      "evidence_sha256": "7f7a736d3457ee1c697f2fc42964e8c9fe435da6f0443ffa7d9082d88a0561e0"
+    },
+    {
+      "reviewer": "Grok",
+      "verdict": "ACCEPT",
+      "code_sha256": "396313ebc2ba747f608e08697d78a324dc9c39baefeecbf8f8ca69562a1eb0a2",
+      "prereg_sha256": "b4886c558bfc0cee5a870ad59a8916831cbc7f6a4a06b61b071b16132cb06e72",
+      "evidence_path": "reviews/freeze-v2-grok.md",
+      "evidence_sha256": "333f3aaf90de5bec7311663e570f49dbebeba77eb8137747eb4674b0ec5d07cb"
+    }
+  ],
+  "base_preregistration": {
+    "path": "PREREGISTRATION.md",
+    "sha256": "d51a14d0c38348ce3c2e5234c2e50665ee3146b4c71216c92882336069f7ee48"
+  },
+  "analysis_sha256": "e18de596ecb9abe250c6bcdcc85cc31b465b385810f50ca000b6dfd6a4e43bb6",
+  "frozen_targets": {
+    "PREREGISTRATION.md": "d51a14d0c38348ce3c2e5234c2e50665ee3146b4c71216c92882336069f7ee48",
+    "PREREGISTRATION-v2.md": "b4886c558bfc0cee5a870ad59a8916831cbc7f6a4a06b61b071b16132cb06e72",
+    "t5.py": "396313ebc2ba747f608e08697d78a324dc9c39baefeecbf8f8ca69562a1eb0a2",
+    "runs/analyze.py": "e18de596ecb9abe250c6bcdcc85cc31b465b385810f50ca000b6dfd6a4e43bb6",
+    "runs/test_analysis.py": "003b88e86da1c12f5aa1e5a6a96273c463d4568cb8f965d2f31a747d7623564f",
+    "runs/driver.py": "dfae68b767d9db861af1dffd1dddb01d963758b8f41746cd012886c7e42c989d",
+    "runs/watch.py": "a0762ec5d90124c6a99097213b6bd6e14f7566b4eafe40bc49e80a4c10d0cbfe",
+    "runs/confirmatory-manifest.json": "4567ea4c07cae7e7f7cf1279c189eff94e02936aa77f28c8789ca48615871bab",
+    "runs/confirmation-data-hashes.json": "044f24d31aebdd94074404a0a7c30440fcb4b8f0058a5d395b57c2f3b7c43e54"
+  },
+  "panel_receipt": {
+    "path": "reviews/freeze-v2-panel-receipt.json",
+    "sha256": "d435bd3c8391ff3baac5a34bc775f6c6cf2e980f14684afc77da988741567fe2"
+  },
+  "created_utc": "2026-10-23T14:33:23.748967+00:00",
+  "Machine": "producer-node",
+  "Agent": "Codex"
+}

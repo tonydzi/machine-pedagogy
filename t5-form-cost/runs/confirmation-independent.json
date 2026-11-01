@@ -1,0 +1,197 @@
+{
+  "Agent": "Codex/independent-one-off",
+  "H1": {
+    "ci95": [
+      0.18956679756560738,
+      0.26203910521217044
+    ],
+    "differences": [
+      0.20703125,
+      0.197265625,
+      0.111328125,
+      0.224609375,
+      0.1328125,
+      0.3125,
+      0.32421875,
+      0.240234375,
+      0.234375,
+      0.23828125,
+      0.216796875,
+      0.09765625,
+      0.23046875,
+      0.17578125,
+      0.396484375,
+      0.224609375,
+      0.263671875,
+      0.236328125
+    ],
+    "mean": 0.2258029513888889,
+    "n": 18,
+    "p_two_sided": 2.45950522350605e-10,
+    "sample_variance": 0.005309672137491064,
+    "sd": 0.07286749712657259
+  },
+  "Machine": "producer-node",
+  "captured_utc": "2026-10-23T15:20:49.046648+00:00",
+  "command": [
+    "python",
+    "-B",
+    "<local>/verify_completed54_independent.py",
+    "--manifest",
+    "runs/confirmatory-manifest.json"
+  ],
+  "excluded_runs": [],
+  "excluded_seeds": [],
+  "exit_code": 0,
+  "feasibility": {
+    "B_native_means": {
+      "fixed": 1.0,
+      "permuted": 1.0,
+      "variable": 0.8936631944444444
+    },
+    "H1_means": {
+      "fixed": 0.12434895833333333,
+      "permuted": 0.13802083333333334,
+      "variable": 0.3569878472222222
+    },
+    "assay_limited": false,
+    "common_floor_runs": 54,
+    "flags": {
+      "H1_global_floor": false,
+      "all_arm_mean_H1_at_least_095": false,
+      "any_arm_mean_B_native_below_080": false,
+      "any_native_A_pre_below_090": false
+    },
+    "floor_threshold": 0.26254340277777777,
+    "native_eligible_runs": 50
+  },
+  "helper_sha256": "77167febcf34cc4c0c44611d19f6b4d11d43a0b951af1fad7d9157efe649511f",
+  "inference": true,
+  "input_sha256": {
+    "runs/confirmation-data-hashes.json": "044f24d31aebdd94074404a0a7c30440fcb4b8f0058a5d395b57c2f3b7c43e54",
+    "t5.py": "396313ebc2ba747f608e08697d78a324dc9c39baefeecbf8f8ca69562a1eb0a2",
+    "runs/confirmatory-manifest.json": "4567ea4c07cae7e7f7cf1279c189eff94e02936aa77f28c8789ca48615871bab",
+    "runs/confirmatory/native-retention-v2/seed20_fixed.json": "337c23e55e4ad72f24c0d9b17b73088614be8720cdde29caa2005f0a74afd74e",
+    "runs/confirmatory/native-retention-v2/seed20_permuted.json": "c6e6079ae5671e422a863938a94dc36fbc017d1d6eb2dd8cb4ad83d18cbf9fd5",
+    "runs/confirmatory/native-retention-v2/seed20_variable.json": "63c68a38e66d52cd125129dc99527a5e474dc496f530641ee01c32ef7f8edc53",
+    "runs/confirmatory/native-retention-v2/seed21_fixed.json": "06353d49d8476b7ac33391b12f4da49f76e10b36daee1f68dbef72f856f59c34",
+    "runs/confirmatory/native-retention-v2/seed21_permuted.json": "af5a1a4c2182518f0408f4aedace1699e26aa6dd70b7caf0946ccdf4b912b98c",
+    "runs/confirmatory/native-retention-v2/seed21_variable.json": "9944ae89a9520c4866c159c2e006f54a9246e2340a0c5781f3c5062f2cff88c2",
+    "runs/confirmatory/native-retention-v2/seed22_fixed.json": "e2d810e8ca6118de3c3c779ebd2fb19bcd68da373522b01acba7762a3d9f07b0",
+    "runs/confirmatory/native-retention-v2/seed22_permuted.json": "7c52acc5fb2b69d66dfe05295220a5ee86f3da9fcb60588270bb1369496de68c",
+    "runs/confirmatory/native-retention-v2/seed22_variable.json": "aa9f2c97058d538a4d3b992dc1118955cf1d3eb68d835723379b7e99c6e9a08e",
+    "runs/confirmatory/native-retention-v2/seed23_fixed.json": "af8edbd96dbe8676d93b1263cbf7283d401f5d62a0e28f868bdc58a27d06bb6e",
+    "runs/confirmatory/native-retention-v2/seed23_permuted.json": "054f6b978c1c1c43f090992c00d5f5cb7ed6e768bcd90f5885aaf0bf42f5cfd2",
+    "runs/confirmatory/native-retention-v2/seed23_variable.json": "957f9c24c6b6b3783870b2b3b6a2381f42bc4315b1bb090378a9a25f2e2bbd64",
+    "runs/confirmatory/native-retention-v2/seed24_fixed.json": "5cb1f21272202747978322d061d8669bd5470cba199add5bcff545cb82dcfbd2",
+    "runs/confirmatory/native-retention-v2/seed24_permuted.json": "4008e672b36b5727cded24282439e23d16cbb32bfe79b306e5eae871bbf6bb37",
+    "runs/confirmatory/native-retention-v2/seed24_variable.json": "7d818a2e4df9522f999081af41b6180dfa9c25ef24275c63480021e5d894e44d",
+    "runs/confirmatory/native-retention-v2/seed25_fixed.json": "fc6fc3a05b9bd83c9e5be9809d73c2262d12a6a4c2f750de440f124df0090d18",
+    "runs/confirmatory/native-retention-v2/seed25_permuted.json": "fc8a0cf90cf214f00b3c64098b2b5dc439ff192e217328b1218409abceace8b0",
+    "runs/confirmatory/native-retention-v2/seed25_variable.json": "b388441729e43c2a64af22231afed6268098cf02bc3b3f5796284c67e07655f4",
+    "runs/confirmatory/native-retention-v2/seed26_fixed.json": "e5074e33b3f6d3990445e5d9435967c33ac919759b75e000d76d011663826c1e",
+    "runs/confirmatory/native-retention-v2/seed26_permuted.json": "738c3e1829a2c6181386838548e95249c0d10b273367ad778bb035f7d84985cf",
+    "runs/confirmatory/native-retention-v2/seed26_variable.json": "29e8a9eb5308c96cc6916fe682f6fb4e0c6032b4ff9f4b31d86656d70ab3a99f",
+    "runs/confirmatory/native-retention-v2/seed27_fixed.json": "6a0bb80a3d0c0e0f7a38b84f3dd648db4193915fd9bfbf14a2a193910a3106eb",
+    "runs/confirmatory/native-retention-v2/seed27_permuted.json": "626bd95d7a4969ec64b13913fe581028e7e8907c00106a5a7dba56e25566c91c",
+    "runs/confirmatory/native-retention-v2/seed27_variable.json": "9efa6edf85ee313105c56f1112ede19fd9f4bff90cdf7cbfd1b5f943e7c754da",
+    "runs/confirmatory/native-retention-v2/seed28_fixed.json": "5864fb79882a28dc4cf6c568c04b25dceb8c734dfcdf156efafef580f6f76da9",
+    "runs/confirmatory/native-retention-v2/seed28_permuted.json": "bf4bbc12fa6c1d2d4fc9dd3a31b488341de2d31e0f29c0cee6657962770f15d6",
+    "runs/confirmatory/native-retention-v2/seed28_variable.json": "81e5f0cecb3ad1c9c36fa0523ee762c6b57a21038200b0fd903fd51f20f48c3d",
+    "runs/confirmatory/native-retention-v2/seed29_fixed.json": "2918cf15a2ce335a029aeeb183e6e14d5615aa48431aaf4104570b619d48bd8c",
+    "runs/confirmatory/native-retention-v2/seed29_permuted.json": "f2f4f912f56e24f0847b0ec8ab6ffc64b30aaf0aa0534dece18a7e9d5f0811cc",
+    "runs/confirmatory/native-retention-v2/seed29_variable.json": "e386941ca446148dd12381cdecab6e655c275fad16d2aa8976944d677b9a0f80",
+    "runs/confirmatory/native-retention-v2/seed30_fixed.json": "e9ea38665bbd8203339b26f9f56b08e8f6e7487d716100565855214ff7bce9fa",
+    "runs/confirmatory/native-retention-v2/seed30_permuted.json": "a34329e072626460a5baeb52f231e9a4e54a55fb402a2b9b0ca6bcfa771f15c1",
+    "runs/confirmatory/native-retention-v2/seed30_variable.json": "5003609aa89cddc32e24c3cb604e91a58e79c0ee2d064d6fd25a46b84888a801",
+    "runs/confirmatory/native-retention-v2/seed31_fixed.json": "6cd4ddd124f82cf33dfeccb10c6a6f49d36208a5b11ac38f3f0e7a34773026da",
+    "runs/confirmatory/native-retention-v2/seed31_permuted.json": "2dc8ce68f1741be4871c91120bc1ddce5301e5a09e5455f3cbc6f1d4a6f12bc5",
+    "runs/confirmatory/native-retention-v2/seed31_variable.json": "0f032037ecf9ee4c43008e775f90527e09d1de1bdf54487683def094a1d1c850",
+    "runs/confirmatory/native-retention-v2/seed32_fixed.json": "202a91d691622e5d91866f53601624ea705425e1e5345e0ab8bdc57f3af730ef",
+    "runs/confirmatory/native-retention-v2/seed32_permuted.json": "8a226962dfc6c81a2cc26462a0ba2957f7b9a1a50ef2b8c394b8d74c6f6e9a0c",
+    "runs/confirmatory/native-retention-v2/seed32_variable.json": "8b2fa9ae4dff0492878837cff9c9519254e8b3178181d97f27d4f192fbf0884a",
+    "runs/confirmatory/native-retention-v2/seed33_fixed.json": "959dd258e9869e0579c6e443d44042a7174dee2709cb3e66c1b7353b09d6156e",
+    "runs/confirmatory/native-retention-v2/seed33_permuted.json": "8588dc76d4d56b275594436983ce2a6426f86b049ee36cbc2ceb375c2d0106b2",
+    "runs/confirmatory/native-retention-v2/seed33_variable.json": "5e7c36d16a76fdd879a29d8c086d29a621bc6a098d151ccdbf9e3aafa4080030",
+    "runs/confirmatory/native-retention-v2/seed34_fixed.json": "f13ff32631f380c58fc1fe769da91944a8f947465a1c0011e7458d6d345f1eba",
+    "runs/confirmatory/native-retention-v2/seed34_permuted.json": "fb5dac22c7509b94ddf17415710b5d80ad59414178f29ee5ab9566952a4499a9",
+    "runs/confirmatory/native-retention-v2/seed34_variable.json": "a101b03c621676fda86e7c8608ab9ad0179125317938aa4acc95aba4464379bf",
+    "runs/confirmatory/native-retention-v2/seed35_fixed.json": "53db2e8dcdcd480665ef5b9778ba073e333d1091bc02e2cb7bdba4f85e4f7e2f",
+    "runs/confirmatory/native-retention-v2/seed35_permuted.json": "f735da4c6dcd72f4840fa5c58fecd3a4cf90c6c941893688c31b0514496f84ca",
+    "runs/confirmatory/native-retention-v2/seed35_variable.json": "991b240b3650b65e2e2ffb0eb3e6cb77357c89728ce91781338c99aac2d04c3a",
+    "runs/confirmatory/native-retention-v2/seed36_fixed.json": "5303c8f7ae2b767c1ab237008f694399622928780b0a01b820d3e0cb5a8265a2",
+    "runs/confirmatory/native-retention-v2/seed36_permuted.json": "3438e0ad33cd2ff56ef603d07d74f457eb913afeac8bc0b42fe2682279dc4a78",
+    "runs/confirmatory/native-retention-v2/seed36_variable.json": "9f38615bb35237ee1fdb5ef2743c301aea52a2bb0a7a340f43271220db70f50c",
+    "runs/confirmatory/native-retention-v2/seed37_fixed.json": "4e0483fa747d2e79e358cd2261a87f9f915e190a7ce066ac5c1740ca5920602d",
+    "runs/confirmatory/native-retention-v2/seed37_permuted.json": "feeca8b9e51279c113730f1603bfdd4a01363160bf256ef44dbd7e4aef5616e5",
+    "runs/confirmatory/native-retention-v2/seed37_variable.json": "8dcf76c4037810a7cfb28b82206399dd1c2ee182325a4aceb1742d175c0b7b74"
+  },
+  "per_run_budget": {
+    "backward_calls": 550,
+    "examples": 40960,
+    "forward_calls": 595,
+    "tokens": 614400
+  },
+  "primary_and_independent_agree": true,
+  "runs": 54,
+  "runtime": {
+    "fixed": {
+      "mean_wall_s": 16.66674734445082,
+      "range_wall_s": [
+        13.958586000022478,
+        19.851615200052038
+      ],
+      "sd_wall_s": 1.5208782171901323,
+      "total_cpu_s": 291.484375,
+      "total_wall_s": 300.0014522001147
+    },
+    "permuted": {
+      "mean_wall_s": 17.641085372222328,
+      "range_wall_s": [
+        14.501872599939816,
+        25.623982900055125
+      ],
+      "sd_wall_s": 2.5466245180470484,
+      "total_cpu_s": 305.765625,
+      "total_wall_s": 317.5395367000019
+    },
+    "variable": {
+      "mean_wall_s": 17.346284755557363,
+      "range_wall_s": [
+        13.658281999989413,
+        22.39312470005825
+      ],
+      "sd_wall_s": 2.494972693245237,
+      "total_cpu_s": 302.640625,
+      "total_wall_s": 312.2331256000325
+    }
+  },
+  "seeds": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37
+  ],
+  "series_budget": {
+    "backward_calls": 29700,
+    "examples": 2211840,
+    "forward_calls": 32130,
+    "tokens": 33177600
+  },
+  "summary_sha256": "836b43ef3f0d45a21b3ddece68e0d27f004ec1a9b545255c9f43060e3bd45a79",
+  "valid": true
+}

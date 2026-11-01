@@ -1,0 +1,62 @@
+{
+  "schema": "t5-run-manifest/v1",
+  "phase": "confirmatory",
+  "revision": "native-retention-v2",
+  "python": "python",
+  "t5": "t5.py",
+  "code_sha256": "396313ebc2ba747f608e08697d78a324dc9c39baefeecbf8f8ca69562a1eb0a2",
+  "seeds": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37
+  ],
+  "arms": [
+    "fixed",
+    "permuted",
+    "variable"
+  ],
+  "config": {
+    "steps_a": 200,
+    "steps_b": 200,
+    "steps_c": 150,
+    "threads": 1,
+    "batch": 64,
+    "width": 80,
+    "layers": 2,
+    "heads": 4,
+    "lr": 0.001,
+    "checkpoint": 25,
+    "train_n": 512,
+    "dev_n": 128,
+    "test_n": 256,
+    "comp_n": 128
+  },
+  "output_dir": "runs/confirmatory/native-retention-v2",
+  "runtime_dir": "<local>/t5-form-cost",
+  "driver_task": "T5-form-cost-confirmatory-driver",
+  "watch_task": "T5-form-cost-confirmatory-watch",
+  "cpu_sample_interval_seconds": 5,
+  "run_timeout_seconds": 1800,
+  "gate_receipt": "runs/confirmatory-gate.json",
+  "data_hashes": {
+    "path": "runs/confirmation-data-hashes.json",
+    "sha256": "044f24d31aebdd94074404a0a7c30440fcb4b8f0058a5d395b57c2f3b7c43e54"
+  },
+  "Machine": "producer-node",
+  "Agent": "Codex"
+}

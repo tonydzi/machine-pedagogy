@@ -1,0 +1,170 @@
+{
+  "n_paired_seeds": 3,
+  "differences": [
+    0.21875,
+    0.26953125,
+    0.1953125
+  ],
+  "mean": 0.22786458333333334,
+  "sd": 0.0379395892821184,
+  "ci95": [
+    0.1336174188293044,
+    0.3221117478373623
+  ],
+  "p_two_sided": 0.009114668661980194,
+  "rough_normal_n_for_3pp_80pct": 13,
+  "power_caveat": "pilot n=3 is unstable; not adequate power evidence",
+  "runs": [
+    {
+      "seed": 0,
+      "arm": "fixed",
+      "metrics": {
+        "a_pre_b": 0.125,
+        "a_acquisition_native": 1,
+        "a_post_b": 0.1640625,
+        "h1_b_post": 0.15234375,
+        "c_comp_pre": 0.109375,
+        "c_auc": 0.609375,
+        "c_comp": 0.5078125,
+        "c_comp_gain": 0.3984375,
+        "retention_delta": 0.0390625
+      },
+      "wall_s": 23.508821600000374
+    },
+    {
+      "seed": 0,
+      "arm": "permuted",
+      "metrics": {
+        "a_pre_b": 0.1796875,
+        "a_acquisition_native": 1,
+        "a_post_b": 0.16796875,
+        "h1_b_post": 0.12109375,
+        "c_comp_pre": 0.0078125,
+        "c_auc": 0.76171875,
+        "c_comp": 0.90625,
+        "c_comp_gain": 0.8984375,
+        "retention_delta": -0.01171875
+      },
+      "wall_s": 20.70319929998368
+    },
+    {
+      "seed": 0,
+      "arm": "variable",
+      "metrics": {
+        "a_pre_b": 0.33984375,
+        "a_acquisition_native": 1,
+        "a_post_b": 0.3984375,
+        "h1_b_post": 0.35546875,
+        "c_comp_pre": 0.1953125,
+        "c_auc": 0.7252604166666666,
+        "c_comp": 0.65625,
+        "c_comp_gain": 0.4609375,
+        "retention_delta": 0.05859375
+      },
+      "wall_s": 19.935405500000343
+    },
+    {
+      "seed": 1,
+      "arm": "fixed",
+      "metrics": {
+        "a_pre_b": 0.1484375,
+        "a_acquisition_native": 1,
+        "a_post_b": 0.125,
+        "h1_b_post": 0.1328125,
+        "c_comp_pre": 0.125,
+        "c_auc": 0.6673177083333334,
+        "c_comp": 0.953125,
+        "c_comp_gain": 0.828125,
+        "retention_delta": -0.0234375
+      },
+      "wall_s": 19.836297700065188
+    },
+    {
+      "seed": 1,
+      "arm": "permuted",
+      "metrics": {
+        "a_pre_b": 0.15234375,
+        "a_acquisition_native": 1,
+        "a_post_b": 0.09375,
+        "h1_b_post": 0.15625,
+        "c_comp_pre": 0.125,
+        "c_auc": 0.5397135416666666,
+        "c_comp": 0.421875,
+        "c_comp_gain": 0.296875,
+        "retention_delta": -0.05859375
+      },
+      "wall_s": 33.15275110001676
+    },
+    {
+      "seed": 1,
+      "arm": "variable",
+      "metrics": {
+        "a_pre_b": 0.3828125,
+        "a_acquisition_native": 1,
+        "a_post_b": 0.2890625,
+        "h1_b_post": 0.4140625,
+        "c_comp_pre": 0.3125,
+        "c_auc": 0.8307291666666666,
+        "c_comp": 1,
+        "c_comp_gain": 0.6875,
+        "retention_delta": -0.09375
+      },
+      "wall_s": 38.20299309992697
+    },
+    {
+      "seed": 2,
+      "arm": "fixed",
+      "metrics": {
+        "a_pre_b": 0.1171875,
+        "a_acquisition_native": 1,
+        "a_post_b": 0.14453125,
+        "h1_b_post": 0.1015625,
+        "c_comp_pre": 0.2421875,
+        "c_auc": 0.5501302083333334,
+        "c_comp": 0.9296875,
+        "c_comp_gain": 0.6875,
+        "retention_delta": 0.02734375
+      },
+      "wall_s": 73.7042295000283
+    },
+    {
+      "seed": 2,
+      "arm": "permuted",
+      "metrics": {
+        "a_pre_b": 0.15625,
+        "a_acquisition_native": 1,
+        "a_post_b": 0.125,
+        "h1_b_post": 0.1328125,
+        "c_comp_pre": 0.078125,
+        "c_auc": 0.5305989583333334,
+        "c_comp": 0.6015625,
+        "c_comp_gain": 0.5234375,
+        "retention_delta": -0.03125
+      },
+      "wall_s": 21.37206880003214
+    },
+    {
+      "seed": 2,
+      "arm": "variable",
+      "metrics": {
+        "a_pre_b": 0.484375,
+        "a_acquisition_native": 1,
+        "a_post_b": 0.40234375,
+        "h1_b_post": 0.3125,
+        "c_comp_pre": 0.25,
+        "c_auc": 0.6985677083333334,
+        "c_comp": 0.9453125,
+        "c_comp_gain": 0.6953125,
+        "retention_delta": -0.08203125
+      },
+      "wall_s": 20.52777370007243
+    }
+  ],
+  "total_wall_s": 270.9435403001262,
+  "status": "pilot_dev_only_not_confirmatory",
+  "code_sha256": "3da882c8cb99ee0513c9f98cae82a22ef7750c859a89d86b3069c41ac05a7a70",
+  "run_manifest_sha256": "baf2500e0b8fe32bbc4b74872b0eb3f1fde571ac5b465d11111b02cc93e77142",
+  "Machine": "producer-node",
+  "Agent": "Codex",
+  "interpretation": "Exploratory pilot; primary p-value does not confirm effect. H2 neutral baseline near chance for fixed arms; full vector validity under review."
+}

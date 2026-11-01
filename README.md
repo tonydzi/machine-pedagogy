@@ -35,6 +35,27 @@ python t2-threshold-replay/t2.py --curve --seeds 20-29  # confirmatory holdout
 
 `t2.sha1` is the hash of the code that produced the confirmatory run.
 
+## T5: the cost of a fixed form
+
+Folder: [`t5-form-cost/`](t5-form-cost/).
+
+Question: at an equal training budget, does a small network that learned the same records in
+one fixed form, another fixed form, or a varying form transfer the skill to a fourth form it
+never trained on?
+
+Result on 18 fresh pre-registered paired seeds (20-37): the varying form beats the mean of the
+two fixed forms by +22.58 points (95% CI [18.96; 26.20]), positive in 18 of 18 seeds. Both
+fixed arms stay below the 16.25% majority baseline, so the contrast is "varying form transfers,
+fixed forms fail to transfer". Tiny model, synthetic task, CPU; form variation is known as
+augmentation and no novelty is claimed. Files were sanitized before publication;
+`t5-form-cost/SANITIZATION.md` maps every original hash to the exported file.
+
+Reproduce (CPU only, no download; needs numpy, torch, scipy):
+
+```
+python t5-form-cost/t5.py summarize --files "t5-form-cost/runs/confirmatory/native-retention-v2/*.json"
+```
+
 ## Planned
 
 T3, persona grain: does a persona trained against a base model's existing dispositions drift

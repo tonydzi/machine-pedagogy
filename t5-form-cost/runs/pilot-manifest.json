@@ -1,0 +1,22 @@
+{
+  "schema": "t5-run-manifest/v1",
+  "phase": "pilot-dev",
+  "python": "python",
+  "t5": "t5.py",
+  "code_sha256": "3da882c8cb99ee0513c9f98cae82a22ef7750c859a89d86b3069c41ac05a7a70",
+  "seeds": [0, 1, 2],
+  "arms": ["fixed", "permuted", "variable"],
+  "config": {
+    "steps_a": 200, "steps_b": 200, "steps_c": 150, "threads": 1,
+    "batch": 64, "width": 80, "layers": 2, "heads": 4, "lr": 0.001,
+    "checkpoint": 25, "train_n": 512, "dev_n": 128, "test_n": 256, "comp_n": 128
+  },
+  "output_dir": "runs/pilot-dev",
+  "runtime_dir": "<local>/t5-form-cost",
+  "driver_task": "T5-form-cost-pilot-dev-driver",
+  "watch_task": "T5-form-cost-pilot-dev-watch",
+  "cpu_sample_interval_seconds": 5,
+  "run_timeout_seconds": 1800,
+  "Machine": "producer-node",
+  "Agent": "Codex"
+}
