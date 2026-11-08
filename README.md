@@ -35,6 +35,28 @@ python t2-threshold-replay/t2.py --curve --seeds 20-29  # confirmatory holdout
 
 `t2.sha1` is the hash of the code that produced the confirmatory run.
 
+### T2 v4: MNIST scale, 30 fresh seeds, Holm (November 2026)
+
+Following an external review (toy scale, n=10, uncorrected sign tests), the design was re-run on
+Split-MNIST and Permuted-MNIST (MLP 784-256-256-10, 2,500 steps, 400-step replay cap) on fresh
+seeds 30-59, with paired Wilcoxon tests, bootstrap 95% CIs and Holm correction over 40
+pre-registered tests (addendum 3 of `PREREGISTRATION.md`, code SHA-256 in `t2_mnist.sha256`).
+A reservoir experience-replay baseline was added.
+
+Result: on Split-MNIST the threshold arm beats uniform replay at every budget (+5.5 to +12.3
+points, all Holm-significant). The sensor-free proportional rule matches it at nine of ten
+budgets; at the largest Split budget the trigger wins by +3.6 points (Holm p = 0.001).
+On Permuted-MNIST no placement differs. Red probe passes for all 60 runs.
+
+```
+python t2-threshold-replay/t2_mnist.py --curve --seeds 30-59   # ~65 min on 14 CPU workers
+python t2-threshold-replay/t2_mnist.py --anchors --seeds 30-59
+python t2-threshold-replay/t2_mnist.py --red --seeds 30-59
+python t2-threshold-replay/t2_mnist.py --stats --seeds 30-59   # -> stats_mnist.json
+python t2-threshold-replay/paper_macros.py --out <paper dir>   # numbers, table, figure
+python t2-threshold-replay/_test_t2_mnist.py                   # tests + red proof on 3 mutants
+```
+
 ## T5: the cost of a fixed form
 
 Folder: [`t5-form-cost/`](t5-form-cost/).

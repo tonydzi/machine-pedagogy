@@ -1,0 +1,362 @@
+[
+ {
+  "bench": "split",
+  "seed": 30,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 31,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 32,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 33,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 34,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 35,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 36,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 37,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 38,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 39,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 40,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 41,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 42,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 43,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 44,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 45,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 46,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 47,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 48,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 49,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 50,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 51,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 52,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 53,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 54,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 55,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 56,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 57,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 58,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "split",
+  "seed": 59,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 30,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 31,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 32,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 33,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 34,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 35,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 36,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 37,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 38,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 39,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 40,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 41,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 42,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 43,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 44,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 45,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 46,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 47,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 48,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 49,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 50,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 51,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 52,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 53,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 54,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 55,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 56,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 57,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 58,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ },
+ {
+  "bench": "perm",
+  "seed": 59,
+  "C(+inf)==A": true,
+  "C(-inf)==B": true
+ }
+]
