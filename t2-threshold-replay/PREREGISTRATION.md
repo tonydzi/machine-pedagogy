@@ -40,3 +40,6 @@ Hypotheses (same direction as H1-H3, adapted to n=30 and Holm):
 - H2: within-task timing does not matter: at no point is |C - E_shuf| >= 0.02 with Holm-adjusted p < 0.05 (evaluated per bench).
 - H3: the sensor is not needed: at no point does C beat F_lin with Holm-adjusted p < 0.05.
 Any outcome is reported as is. The digits study (seeds 0-29, v3) stays in the paper as the original small study.
+
+## Addendum 4 (2026-11-08 16:52 UTC, after the confirmatory results; post hoc, descriptive only)
+An external breaker panel (OpenRouter, 2026-11-08) found that the pre-registered ER_res baseline grows its reservoir by 50 per finished task, so after each growth the first incoming current-task examples enter the buffer unconditionally. This is not standard reservoir sampling and weakens the baseline. er_fixed.py (sha256 948a06551b2a30db0f2370eb58076bd3095f551523c232b197ea39ab25d9a707) adds ER_fix: one reservoir of fixed capacity 200 over the whole stream, otherwise identical streams, at C's replay count and B_match's steps, seeds 30-59. ER_fix is post hoc and descriptive (no test, outside the Holm family). ER_res is still reported as pre-registered. t2_mnist.py is unchanged.

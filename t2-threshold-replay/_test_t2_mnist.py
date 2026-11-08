@@ -34,6 +34,7 @@ def check_red_probe(m):
         cn, ca = m.run("C", tasks, 7, SMALL, tau=math.inf), m.run("C", tasks, 7, SMALL, tau=-math.inf)
         assert cn["R"] == a["R"] and cn["replay"] == 0, f"{bench}: C(+inf) != A"
         assert ca["R"] == b["R"] and ca["replay"] == b["replay"] > 0, f"{bench}: C(-inf) != B"
+        assert ca["replay_at"] == b["replay_at"], f"{bench}: C(-inf) replays at different steps than B"
         assert b["replay"] == (m.T - 1) * SMALL["S"] // SMALL["N"], f"{bench}: B budget {b['replay']}"
 
 

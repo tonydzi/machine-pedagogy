@@ -48,6 +48,8 @@ points, all Holm-significant). The sensor-free proportional rule matches it at n
 budgets; at the largest Split budget the trigger wins by +3.6 points (Holm p = 0.001).
 On Permuted-MNIST no placement differs. Red probe passes for all 60 runs.
 
+Post hoc (addendum 4): the pre-registered reservoir baseline grew its buffer per task; `er_fixed.py` adds the standard fixed-capacity reservoir (ER_fix), descriptive only.
+
 ```
 python t2-threshold-replay/t2_mnist.py --curve --seeds 30-59   # ~65 min on 14 CPU workers
 python t2-threshold-replay/t2_mnist.py --anchors --seeds 30-59

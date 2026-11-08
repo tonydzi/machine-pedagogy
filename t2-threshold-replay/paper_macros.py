@@ -32,6 +32,28 @@ def pfmt(p):
     return f"{p:.3f}"
 
 
+def extras(runs=os.path.join(HERE, "runs_mnist")):
+    import numpy as np
+    sys_path = HERE
+    import sys
+    if sys_path not in sys.path:
+        sys.path.insert(0, sys_path)
+    from t2_mnist import boot_ci, read_jsonl
+    cur = {(r["bench"], r["tau"], r["seed"]): r for r in read_jsonl(os.path.join(runs, "curve_seeds30-59.jsonl"))}
+    erf = {(r["bench"], r["tau"], r["seed"]): r for r in read_jsonl(os.path.join(runs, "erfix_seeds30-59.jsonl"))}
+    assert set(erf) == set(cur), "ER_fix rows do not cover the confirmatory run"
+    for k in cur:
+        assert erf[k]["replay"] == cur[k]["replay"], ("ER_fix replay count differs", k)
+    out = {"points": {}, "n": len(erf)}
+    for b, tau in sorted({(k[0], k[1]) for k in cur}):
+        seeds = sorted(s for (bb, tt, s) in cur if bb == b and tt == tau)
+        alloc = [cur[(b, tau, s)]["Ee_acc"] - cur[(b, tau, s)]["Bm_acc"] for s in seeds]
+        erfix = [cur[(b, tau, s)]["C_acc"] - erf[(b, tau, s)]["Ef2_acc"] for s in seeds]
+        out["points"][(b, tau)] = {"alloc": float(np.mean(alloc)), "alloc_ci": boot_ci(alloc, seed=11),
+                                   "erfix": float(np.mean(erfix)), "erfix_ci": boot_ci(erfix, seed=13)}
+    return out
+
+
 def build(stats, digits_csv, out):
     os.makedirs(out, exist_ok=True)
     N = {}
@@ -63,6 +85,25 @@ def build(stats, digits_csv, out):
             N[f"{b}-{a}-dmin"], N[f"{b}-{a}-dmax"] = f"{min(ds):+.1f}".replace("-", "$-$"), f"{max(ds):+.1f}".replace("-", "$-$")
         N[f"{b}-replaymin"] = f"{min(p['replay'] for p in P):.0f}"
         N[f"{b}-replaymax"] = f"{max(p['replay'] for p in P):.0f}"
+    # derived from the raw per-seed rows: allocation effect (E_even - B_match), timing effect
+    # (C - E_even) and the post hoc fixed-capacity reservoir baseline ER_fix (addendum 4)
+    X = extras()
+    for (b, tau), e in X["points"].items():
+        key = f"{b}-{tau}"
+        for name in ["alloc", "erfix"]:
+            N[f"{key}-{name}"] = pts(e[name])
+            N[f"{key}-{name}lo"], N[f"{key}-{name}hi"] = pts(e[name + "_ci"][0]), pts(e[name + "_ci"][1])
+    for b in ["split", "perm"]:
+        es = [e for (bb, _), e in X["points"].items() if bb == b]
+        for name in ["alloc", "erfix"]:
+            v = [100 * e[name] for e in es]
+            N[f"{b}-{name}-dmin"], N[f"{b}-{name}-dmax"] = f"{min(v):+.1f}".replace("-", "$-$"), f"{max(v):+.1f}".replace("-", "$-$")
+        # equivalence check: 95% CI of C - F_lin inside +-2 accuracy points
+        P = [p for p in stats["points"] if p["bench"] == b]
+        N[f"{b}-equivFlin"] = str(sum(1 for p in P if -0.02 < p["ci_F_lin"][0] and p["ci_F_lin"][1] < 0.02))
+    N["erfix-n"] = str(X["n"])
+    for p in stats["points"]:
+        p["d_ER_fix"] = X["points"][(p["bench"], p["tau"])]["erfix"]
     # v3 digits holdout (seeds 20-29), for the comparison paragraph
     if digits_csv and os.path.exists(digits_csv):
         rows = list(csv.DictReader(open(digits_csv, encoding="utf-8")))
@@ -86,6 +127,7 @@ def build(stats, digits_csv, out):
                 star = "$^{*}$" if p[f"padj_{a}"] < 0.05 else ""
                 cells.append(f"{pts(p[f'd_{a}'])}{star} \\scriptsize[{100*lo:+.1f}, {100*hi:+.1f}]".replace("[-", "[$-$").replace(", -", ", $-$"))
             cells.append(pts(p["d_ER_res"]))
+            cells.append(pts(p["d_ER_fix"]))
             L.append(" & ".join(cells) + " \\\\")
         L.append("\\midrule")
     L = L[:-1]
@@ -98,12 +140,13 @@ def build(stats, digits_csv, out):
     fig, axs = plt.subplots(1, 2, figsize=(7.2, 2.8))
     style = {"C": ("threshold (C)", "k", "o", "-"), "B_match": ("uniform", "tab:blue", "s", "--"),
              "F_lin": ("proportional, no sensor", "tab:green", "^", "-."), "E_even": ("per-task even (oracle)", "tab:orange", "d", ":"),
-             "ER_res": ("ER reservoir", "tab:gray", "x", "--")}
+             "ER_fix": ("ER reservoir (fixed size)", "tab:gray", "x", "--")}
     for ax, (b, name) in zip(axs, [("split", "Split-MNIST"), ("perm", "Permuted-MNIST")]):
         P = sorted([p for p in stats["points"] if p["bench"] == b], key=lambda p: p["replay"])
         x = [p["replay"] for p in P]
         for a, (lab, c, m, ls) in style.items():
-            ax.plot(x, [p[a] for p in P], color=c, marker=m, ls=ls, lw=1.2, ms=4, label=lab)
+            y = [p["C"] - p["d_ER_fix"] for p in P] if a == "ER_fix" else [p[a] for p in P]
+            ax.plot(x, y, color=c, marker=m, ls=ls, lw=1.2, ms=4, label=lab)
         ax.set_title(name, fontsize=9); ax.set_xlabel("replay steps (of 400)", fontsize=8); ax.tick_params(labelsize=7)
         ax.grid(alpha=0.3)
     axs[0].set_ylabel(f"final mean accuracy ({stats['n_seeds']} seeds)", fontsize=8)
