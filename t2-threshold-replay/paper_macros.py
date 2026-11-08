@@ -89,6 +89,8 @@ def build(stats, digits_csv, out):
         N[f"{b}-replaymax"] = f"{max(p['replay'] for p in P):.0f}"
     # derived from the raw per-seed rows: allocation effect (E_even - B_match), timing effect
     # (C - E_even) and the post hoc fixed-capacity reservoir baseline ER_fix (addendum 4)
+    # extras() reads the seeds 30-59 raw files; refuse to mix them with stats from other seeds
+    assert stats["seeds"] == [30, 59], f"stats seeds {stats['seeds']} != raw files seeds 30-59"
     X = extras()
     for (b, tau), e in X["points"].items():
         key = f"{b}-{tau}"
