@@ -19,7 +19,7 @@ ARMS = [("B_match", "uniform (global)"), ("E_shuf", "per-task random"), ("E_even
 
 
 def f3(x):
-    return f"{x:.3f}"
+    return f"{x:.3f}".replace("-", "$-$")
 
 
 def pts(x):  # accuracy difference in percentage points, signed
@@ -49,6 +49,7 @@ def extras(runs=os.path.join(HERE, "runs_mnist")):
         seeds = sorted(s for (bb, tt, s) in cur if bb == b and tt == tau)
         alloc = [cur[(b, tau, s)]["Ee_acc"] - cur[(b, tau, s)]["Bm_acc"] for s in seeds]
         erfix = [cur[(b, tau, s)]["C_acc"] - erf[(b, tau, s)]["Ef2_acc"] for s in seeds]
+        out.setdefault("diag", {})[(b, tau)] = float(np.mean([cur[(b, tau, s)]["diag"] for s in seeds]))
         out["points"][(b, tau)] = {"alloc": float(np.mean(alloc)), "alloc_ci": boot_ci(alloc, seed=11),
                                    "erfix": float(np.mean(erfix)), "erfix_ci": boot_ci(erfix, seed=13)}
     return out
@@ -60,8 +61,9 @@ def build(stats, digits_csv, out):
     N["nseeds"] = str(stats["n_seeds"])
     N["seedlo"], N["seedhi"] = str(stats["seeds"][0]), str(stats["seeds"][1])
     N["holmm"] = str(stats["holm_family_size"])
-    for k in ["H1", "H2_split", "H2_perm", "H3"]:
-        N[k] = "confirmed" if stats[k] else "rejected"
+    N["H1"] = "confirmed" if stats["H1"] else "not confirmed"
+    for k in ["H2_split", "H2_perm", "H3"]:  # null-type hypotheses: absence of a significant effect is "not rejected"
+        N[k] = "not rejected" if stats[k] else "rejected"
     N["H3flinsig"] = str(stats["H3_flin_sig_better"])
     for a, n in stats["n_sig"].items():
         N[f"nsig-{a}"] = str(n)
@@ -102,6 +104,8 @@ def build(stats, digits_csv, out):
         P = [p for p in stats["points"] if p["bench"] == b]
         N[f"{b}-equivFlin"] = str(sum(1 for p in P if -0.02 < p["ci_F_lin"][0] and p["ci_F_lin"][1] < 0.02))
     N["erfix-n"] = str(X["n"])
+    for (b, tau), v in X["diag"].items():
+        N[f"{b}-{tau}-diag"] = f"{v:.0f}"
     for p in stats["points"]:
         p["d_ER_fix"] = X["points"][(p["bench"], p["tau"])]["erfix"]
     # v3 digits holdout (seeds 20-29), for the comparison paragraph
