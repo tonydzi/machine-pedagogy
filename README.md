@@ -1,5 +1,63 @@
 # machine-pedagogy
 
+Small, pre-registered experiments that ask whether ideas from healthy teaching of children (rest when the learner is tired, vary the form) also help when training neural networks.
+
+**Who it's for:** machine-learning researchers and reviewers who want to check or challenge the results.
+**What you get:** two experiments with code, data and published numbers you can rerun on a normal CPU, including the negative results.
+
+## Quick start
+1. Install Python 3 with numpy, scipy, scikit-learn and torch.
+2. Run `git clone https://github.com/tonydzi/machine-pedagogy` and `cd machine-pedagogy`.
+3. Run `python t5-form-cost/t5.py summarize --files "t5-form-cost/runs/confirmatory/native-retention-v2/*.json"`.
+
+**Done when:** the printed summary shows `"mean": 0.2258...`, the +22.58 points reported for the varying-form arm.
+
+> Want an AI agent to do it for you? Paste this to Claude Code / Codex / Cursor:
+> "Read the 'For AI agents' section of https://github.com/tonydzi/machine-pedagogy and set it up for me."
+
+## For AI agents
+
+### Preconditions
+- Python 3 (3.12 was used by the authors) on CPU. No GPU, no downloads, no accounts, no keys.
+- Packages: numpy, scipy, scikit-learn, torch. There is no requirements file in this repo; install them into a virtual environment and ask the human before installing.
+- The long T2 runs (about 65 minutes on 14 CPU workers) are optional; ask the human first.
+
+### Reproduce
+```bash
+git clone https://github.com/tonydzi/machine-pedagogy
+cd machine-pedagogy
+python -m venv .venv && . .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install numpy scipy scikit-learn torch
+```
+Quick re-derivation of the T5 headline number (read-only, about a second):
+```bash
+python t5-form-cost/t5.py summarize --files "t5-form-cost/runs/confirmatory/native-retention-v2/*.json"
+```
+Full T2 reruns (from the repo, see "Details" for what each does):
+```bash
+python t2-threshold-replay/t2.py --curve --seeds 20-29
+python t2-threshold-replay/t2_mnist.py --curve --seeds 30-59
+python t2-threshold-replay/_test_t2_mnist.py
+```
+Warning: `t2.py` writes its output files into its own folder by default (`--out`). Pass `--out <scratch dir>` so the committed results are not overwritten.
+
+### Configure
+Nothing to configure.
+
+### Verify
+- T5: the summary JSON has `"mean": 0.2258...` (the +22.58 points; 95% CI [18.96; 26.20]). Exit code 0.
+- Code identity: `sha1sum t2-threshold-replay/t2.py` must equal the contents of `t2-threshold-replay/t2.sha1` (`d81d9acd...` today), and `sha256sum t2-threshold-replay/t2_mnist.py` must equal `t2-threshold-replay/t2_mnist.sha256`. Both matched when this README was written.
+
+### Uninstall / rollback
+Delete the cloned folder and the `.venv`. If a rerun overwrote tracked files, restore with `git checkout -- .`.
+
+### Rules for the agent
+- Never edit pre-registration files, the superseded `v1_*`/`v2_*` folders, or committed results to make a number match. A failed reproduction is a result: report it.
+- Do not change code and keep the old hash files; changed code means the confirmatory claim no longer applies.
+- Do not start the 65-minute jobs without the human's yes.
+
+## Details
+
 Experiments that carry health-preserving pedagogy over to how neural networks are trained.
 The tradition says teaching has a cost to the learner, and that recovery should start when
 the learner's diagnosed state calls for it, not when the timetable does. Machine learning
