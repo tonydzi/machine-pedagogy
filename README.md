@@ -29,7 +29,7 @@ cd machine-pedagogy
 python -m venv .venv && . .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install numpy scipy scikit-learn torch
 ```
-Quick re-derivation of the T5 headline number (read-only, about a second):
+Quick re-derivation of the T5 headline number (read-only, a few seconds; importing torch is the slow part):
 ```bash
 python t5-form-cost/t5.py summarize --files "t5-form-cost/runs/confirmatory/native-retention-v2/*.json"
 ```
@@ -45,8 +45,9 @@ Warning: `t2.py` writes its output files into its own folder by default (`--out`
 Nothing to configure.
 
 ### Verify
-- T5: the summary JSON has `"mean": 0.2258...` (the +22.58 points; 95% CI [18.96; 26.20]). Exit code 0.
-- Code identity: `sha1sum t2-threshold-replay/t2.py` must equal the contents of `t2-threshold-replay/t2.sha1` (`d81d9acd...` today), and `sha256sum t2-threshold-replay/t2_mnist.py` must equal `t2-threshold-replay/t2_mnist.sha256`. Both matched when this README was written.
+- T5: the summary JSON has `"mean": 0.2258...` (the +22.58 points; 95% CI [18.96; 26.20]). Exit code 0. The summary also lists `"n_paired_seeds": 18`; a different count means a different data folder. It reads committed result files only, so it proves the arithmetic and the files, not that a fresh training run reproduces them.
+- Code identity: `sha1sum t2-threshold-replay/t2.py` must equal the contents of `t2-threshold-replay/t2.sha1` (`d81d9acd...` today), and `sha256sum t2-threshold-replay/t2_mnist.py` must equal `t2-threshold-replay/t2_mnist.sha256`. Both matched when this README was written. PowerShell equivalents: `(Get-FileHash -Algorithm SHA1 t2-threshold-replay/t2.py).Hash` and `(Get-FileHash -Algorithm SHA256 t2-threshold-replay/t2_mnist.py).Hash` (upper case; compare ignoring case). If git changed line endings on checkout (autocrlf), the hashes differ for that reason only.
+- Test and red proof: `python t2-threshold-replay/_test_t2_mnist.py` must print `PASS 4 checks on t2_mnist.py` and end with `red proof: every broken copy fails`, exit 0 (about 5 minutes on a slow Windows laptop, CPU only; the file itself says about 1 minute on a fast machine). It makes deliberately broken copies of the code and checks that the test catches each, so a green run means the test can actually fail.
 
 ### Uninstall / rollback
 Delete the cloned folder and the `.venv`. If a rerun overwrote tracked files, restore with `git checkout -- .`.
